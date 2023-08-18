@@ -12,8 +12,8 @@ public class StudentRepository {
 
     //use hashmap to store student DB
     HashMap<String,Student> studentDB = new HashMap<>();
-    HashMap<String, Teacher> teacherDB = new HashMap<String, Teacher>();
-    HashMap<String, List<String>> teacherStudentDB = new HashMap<String, List<String>>();
+    HashMap<String, Teacher> teacherDB = new HashMap<>();
+    HashMap<String, List<String>> teacherStudentDB = new HashMap<>();
 //    teacher names (keys) and lists of student names (values).
 
     public void addStudent(Student student){
@@ -58,7 +58,7 @@ public class StudentRepository {
             //teacher is present in teacher db
             if(teacherStudentDB.containsKey(teacher)){
                 for(String student : teacherStudentDB.get(teacher)){
-                    teacherStudentDB.remove(student);
+                    studentDB.remove(student);
                 }
                 teacherStudentDB.remove(teacher);
             }
